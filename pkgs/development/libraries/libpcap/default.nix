@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, fetchpatch, flex, bison }:
+{ stdenv, fetchurl, fetchpatch, flex, bison, bluez }:
 
 stdenv.mkDerivation rec {
   name = "libpcap-1.8.1";
@@ -9,6 +9,7 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [ flex bison ];
+  buildInputs = [ bluez ];
 
   # We need to force the autodetection because detection doesn't
   # work in pure build enviroments.
