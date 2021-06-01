@@ -312,7 +312,7 @@ stdenv.mkDerivation {
 
     + optionalString (libc != null && targetPlatform.isAvr) ''
       for isa in avr5 avr3 avr4 avr6 avr25 avr31 avr35 avr51 avrxmega2 avrxmega4 avrxmega5 avrxmega6 avrxmega7 tiny-stack; do
-        echo "-L${getLib libc}/avr/lib/$isa" >> $out/nix-support/libc-cflags
+        echo "-L${getLib libc}/avr/lib/$isa" >> $out/nix-support/libc-ldflags
       done
     ''
 
